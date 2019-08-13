@@ -1,0 +1,61 @@
+﻿@model EFDataApp.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="container">
+    <h2>Szczegóły</h2>
+
+    <dl class="">
+        <div class="rate-details">
+            <dt class="left-part">
+                @Html.DisplayNameFor(model => model.Imie):
+            </dt>
+            <dd class="right-part">
+                @Html.DisplayFor(model => model.Imie)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt class="left-part">
+                @Html.DisplayNameFor(model => model.Nazwisko):
+            </dt>
+            <dd class="right-part">
+                @Html.DisplayFor(model => model.Nazwisko)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt class="left-part">
+                @Html.DisplayNameFor(model => model.Ulica):
+            </dt>
+            <dd class="right-part"> 
+                @Html.DisplayFor(model => model.Ulica)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt class="left-part">
+                Kod pocztowy:
+            </dt>
+            <dd class="right-part">
+                @Html.DisplayFor(model => model.Kod_pocztowy)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt class="left-part">
+                @Html.DisplayNameFor(model => model.Miejscowosc):
+            </dt>
+            <dd class="right-part">
+                @Html.DisplayFor(model => model.Miejscowosc)
+            </dd>
+            </div>
+    </dl>
+    <div class="buttons">
+        <p>
+            <a asp-action="Edit" asp-route-id="@Model.Id_student">Edytuj</a>
+            <a asp-action="Index">Wróc do listy studentów</a>
+        </p>
+    </div>
+</div>
+<footer></footer>
+
+

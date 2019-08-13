@@ -1,0 +1,78 @@
+﻿@model IEnumerable<EFDataApp.Models.Student>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="container">
+    <h2>Lista studentów</h2>
+    <table class="students">
+        <thead>
+            <tr>
+                <th class="column1">
+                    <a asp-action="Index" class="sort" id="sort-id" asp-route-sortOrder="@ViewData["IDSortParm"]">
+                        ID
+                    </a>
+                </th>
+                <th class="column2">
+                    <a asp-action="Index" class="sort" id="sort-name" asp-route-sortOrder="@ViewData["NameSortParm"]">@Html.DisplayNameFor(model => model.Imie)</a>
+                </th>
+                <th class="column3">
+                    <a asp-action="Index"  class="sort" id="sort-lastname" asp-route-sortOrder="@ViewData["LastNameSortParm"]">@Html.DisplayNameFor(model => model.Nazwisko)</a>
+                </th>
+                <th class="column4">Ulica</th>
+                <th class="column5">Kod pocztowy</th>
+                <th class="column6">Miejscowość</th>
+                <th class="column7">Ocena</th>
+                <th class="column8"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_student)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Imie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nazwisko)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ulica)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kod_pocztowy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Miejscowosc)
+                    </td>
+                    <td>
+                        @foreach (var i in item.Student_Oceny)
+                        {
+                            <div>@i.Ocena</div>
+                        }
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id_student">Edycja</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id_student">Szczegóły</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id_student">Usuń</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="buttons">
+        <p>
+            <a asp-action="Create">Dodaj studenta</a>
+            <a class="add-rate" asp-action="Create" asp-controller="Student_Oceny">Dodaj ocenę</a>
+        </p>
+    </div>
+
+</section>
+<footer></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="~/js/main.js"></script>

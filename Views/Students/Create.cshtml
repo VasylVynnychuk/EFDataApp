@@ -1,0 +1,53 @@
+﻿@model EFDataApp.Models.Student
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <h2>Dodanie studenta</h2>
+
+
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Imie" class="add-label1">Imię</label>
+            <input asp-for="Imie" type="text" class="form-control" />
+            <span asp-validation-for="Imie" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nazwisko" class="add-label2">Nazwisko</label>
+            <input asp-for="Nazwisko" type="text" class="form-control" />
+            <span asp-validation-for="Nazwisko" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ulica" class="add-label3">Ulica</label>
+            <input asp-for="Ulica" type="text" class="form-control" />
+            <span asp-validation-for="Ulica" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Kod_pocztowy" class="add-label4">Kod pocztowy</label>
+            <input asp-for="Kod_pocztowy" type="text" maxlength="6" pattern="[0-9]{2}-[0-9]{3}$" class="form-control" />
+            <span asp-validation-for="Kod_pocztowy" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Miejscowosc" class="add-label5">Miejscowość</label>
+            <input asp-for="Miejscowosc" class="form-control" />
+            <span asp-validation-for="Miejscowosc" class="text-danger"></span>
+        </div>
+        
+        <div class="buttons">
+            <div class="form-add">
+                <input type="submit" value="Dodaj">
+            </div>
+            <a asp-action="Index">Wróć do listy studentów</a>
+        </div>
+    </form>
+ 
+</div>
+<footer></footer>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

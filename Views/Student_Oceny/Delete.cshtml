@@ -1,0 +1,47 @@
+﻿@model EFDataApp.Models.Student_Oceny
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h3>Czy jesteś pewien, że chcesz usunąć?</h3>
+    <dl>
+        <div class="rate-delete">
+            <dt>
+                Ocena:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ocena)
+            </dd>
+        </div>
+        <div class="rate-delete">
+            <dt>
+                Ocena słownie:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ocena_slownie)
+            </dd>
+        </div>
+        <div class="rate-delete">
+            <dt>
+                ID studenta:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Student.Id_student)
+            </dd>
+        </div>
+    </dl>
+    <form asp-action="Delete">
+        <div class="buttons">
+            <input type="hidden" asp-for="Id_oceny" />
+            <div class="form-add">
+                <input type="submit" value="Usuń" class="btn btn-default" />
+            </div>
+            <p>
+                <a asp-action="Index">Wróć do listy ocen</a>
+            </p>
+        </div>
+    </form>
+</div>
+<footer></footer>

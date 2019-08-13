@@ -1,0 +1,72 @@
+﻿@model EFDataApp.Models.Student
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+
+<div class="container">
+    <h2>Edycja</h2>
+    <form asp-action="Edit">
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id_student" />
+
+        <div class="form-group">
+            <label asp-for="Id_student" class="left-part">ID</label>
+            <input asp-for="Id_student" name="inputID" disabled="disabled" class="right-part" />
+            <span asp-validation-for="Id_student" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Imie" class="left-part">Imię</label>
+            <input asp-for="Imie" type="text" class="right-part" />
+            <span asp-validation-for="Imie" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Nazwisko" class="left-part">Nazwisko</label>
+            <input asp-for="Nazwisko" type="text" class="right-part" />
+            <span asp-validation-for="Nazwisko" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ulica" class="left-part">Ulica</label>
+            <input asp-for="Ulica" type="text" class="right-part" />
+            <span asp-validation-for="Ulica" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Kod_pocztowy" class="left-part">Kod pocztowy</label>
+            <input asp-for="Kod_pocztowy" type="text" maxlength="6" pattern="[0-9]{2}-[0-9]{3}$" class="right-part" required />
+            <span asp-validation-for="Kod_pocztowy" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Miejscowosc" class="left-part">Miejscowość</label>
+            <input asp-for="Miejscowosc" class="right-part" />
+            <span asp-validation-for="Miejscowosc" class="text-danger"></span>
+        </div>
+        <div>
+            <label asp-for="Email">Введите Email</label><br />
+            <input type="text" asp-for="Email" />
+            <span asp-validation-for="Email" />
+        </div>
+        <div>
+            <label asp-for="Password">Введите пароль</label><br />
+            <input type="password" asp-for="Password" />
+            <span asp-validation-for="Password" />
+        </div>
+        <div class="buttons">
+            <div class="form-add">
+                <input type="submit" value="Zapisz" />
+            </div>
+            <p>
+                <a asp-action="Index">Wróć do listy studentów</a>
+            </p>
+        </div>
+
+    </form>
+        
+</div>
+<footer></footer>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

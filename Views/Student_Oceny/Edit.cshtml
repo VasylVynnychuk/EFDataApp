@@ -1,0 +1,43 @@
+﻿@model EFDataApp.Models.Student_Oceny
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <h2>Edycja</h2>
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input type="hidden" asp-for="Id_oceny" />
+        <div class="form-group-rate">
+            <label asp-for="Ocena" class="left-part"></label>
+            <input asp-for="Ocena" min="2" max="5" class="right-part" />
+            <span asp-validation-for="Ocena" class="text-danger"></span>
+        </div>
+        <div class="form-group-rate">
+            <label asp-for="Ocena_slownie" class="left-part">Ocena słownie</label>
+            <input asp-for="Ocena_slownie" id="right-part" class="right-part" />
+            <span asp-validation-for="Ocena_slownie" class="text-danger"></span>
+        </div>
+        <div class="form-group-rate">
+            <label asp-for="Id_student" class="left-part">ID studenta</label>
+            <select asp-for="Id_student" asp-items="ViewBag.Id_student"></select>
+            <span asp-validation-for="Id_student" class="text-danger"></span>
+        </div>
+        <div class="buttons">
+            <div class="form-add">
+                <input type="submit" value="Zapisz">
+            </div>
+            <p>
+                <a asp-action="Index">Wróć do listy ocen</a>
+            </p>
+        </div>
+    </form>
+      
+</div>
+<footer></footer>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

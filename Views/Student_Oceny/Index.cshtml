@@ -1,0 +1,68 @@
+﻿@model IEnumerable<EFDataApp.Models.Student_Oceny>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<section class="container">
+
+    <h2>Lista ocen</h2>
+    <table class="table rate">
+        <thead>
+            <tr>
+                <th class="column1">Ocena</th>
+                <th class="column2 rate">Ocena słownie</th>
+                <th class="column3">ID studenta</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Ocena)
+                    </td>
+                    <td class="rate">
+                        @switch (item.Ocena)
+                        {
+                            case 2:
+                                item.Ocena_slownie = "dwa";
+                                break;
+                            case 3:
+                                item.Ocena_slownie = "tzry";
+                                break;
+                            case 4:
+                                item.Ocena_slownie = "cztery";
+                                break;
+                            case 5:
+                                item.Ocena_slownie = "pięć";
+                                break;
+                            default:
+                                item.Ocena_slownie = "Zaliczonko";
+                                break;
+                        }
+                        @Html.DisplayFor(modelItem => item.Ocena_slownie)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id_student)
+                    </td>
+
+
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id_oceny">Edycja</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id_oceny">Szczegóły</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id_oceny">Usuń</a>
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    <div class="buttons">
+        <p>
+            <a class="add-rate" asp-action="Create">Dodaj ocenę</a>
+        </p>
+    </div>
+</section>
+<footer></footer>

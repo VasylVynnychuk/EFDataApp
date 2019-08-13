@@ -1,0 +1,45 @@
+﻿@model EFDataApp.Models.Student_Oceny
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+
+<div class="container">
+    <h2>Szczegóły</h2>
+    <dl>
+        <div class="rate-details">
+            <dt>
+                Ocena:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ocena)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt>
+                Ocena słownie:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Ocena_slownie)
+            </dd>
+        </div>
+        <div class="rate-details">
+            <dt>
+                ID studenta:
+            </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Student.Id_student)
+            </dd>
+        </div>
+    </dl>
+    <div class="buttons">
+        <p>
+            <a asp-action="Edit" asp-route-id="@Model.Id_oceny">Edytuj</a>
+            <a asp-action="Index">Wróć do listy ocen</a>
+        </p>
+    </div>
+</div>
+<footer></footer>
+

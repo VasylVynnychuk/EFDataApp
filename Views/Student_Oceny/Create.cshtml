@@ -1,0 +1,42 @@
+﻿@model EFDataApp.Models.Student_Oceny
+
+@{
+        ViewData["Title"] = "Create";
+}
+
+
+<div class="container">
+    <h2>Lista ocen</h2>
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="Ocena" class="add-rate-label1"></label>
+            <input asp-for="Ocena" min="2" max="5" class="form-control" />
+            <span asp-validation-for="Ocena" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Ocena_slownie" class="add-rate-label2">Ocena słownie</label>
+            <input asp-for="Ocena_slownie" type="text" class="form-control" />
+            <span asp-validation-for="Ocena_slownie" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Id_student" class="add-rate-label3">ID studenta</label>
+            <select asp-for="Id_student" class="form-control" asp-items="ViewBag.Id_student"></select>
+        </div>
+        <div class="buttons-edit"></div>
+        <div class="buttons">
+            <div class="form-add">
+                <input type="submit" value="Dodaj">
+            </div>
+            <a asp-action="Index">Wróć do listy studentów</a>
+        </div>
+    </form>
+    
+</div>
+<footer></footer>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
