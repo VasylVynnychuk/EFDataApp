@@ -13,7 +13,12 @@ namespace EFDataApp.Migrations
                 {
                     Email = table.Column<string>(nullable: false),
                     Password = table.Column<string>(nullable: false),
-                    ConfirmPassword = table.Column<string>(nullable: true)
+                    ConfirmPassword = table.Column<string>(nullable: true),
+                    Imie = table.Column<string>(nullable: true),
+                    Nazwisko = table.Column<string>(nullable: true),
+                    Ulica = table.Column<string>(nullable: true),
+                    Kod_pocztowy = table.Column<string>(nullable: true),
+                    Miejscowosc = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

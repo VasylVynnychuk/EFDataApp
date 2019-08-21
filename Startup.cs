@@ -12,11 +12,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc.Authorization;
-using EFDataApp.Authorization;
-using ContactManager.Authorization;
 
 namespace EFDataApp
 {
@@ -39,14 +34,11 @@ namespace EFDataApp
                 options.UseSqlServer(connection);
             });
 
-            //services.AddDefaultIdentity<IdentityUser>().AddRoles<IdentityRole>()
-            //    .AddEntityFrameworkStores<AuthenticationContext>();
-
-            //services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
-            //    .AddCookie(options =>
-            //    {
-            //        options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
-            //    });
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options =>
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -56,23 +48,7 @@ namespace EFDataApp
             });
 
 
-            services.AddMvc(config =>
-            {
-                var policy = new AuthorizationPolicyBuilder()
-                .RequireAuthenticatedUser()
-                .Build();
-                config.Filters.Add(new AuthorizeFilter(policy));
-            })
-                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-
-            services.AddScoped<IAuthorizationHandler,
-                          ContactIsOwnerAuthorizationHandler>();
-
-            services.AddSingleton<IAuthorizationHandler,
-                                  ContactAdministratorsAuthorizationHandler>();
-
-            services.AddSingleton<IAuthorizationHandler,
-                                  ContactManagerAuthorizationHandler>();
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

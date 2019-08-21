@@ -8,7 +8,6 @@ namespace EFDataApp.Models
     {
         [Key]
         public int Id_student { get; set; }
-        public string OwnerID { get; set; }
         public string Imie { get; set; }
         public string Nazwisko { get; set; }
         public string Ulica { get; set; }
@@ -16,15 +15,7 @@ namespace EFDataApp.Models
         public string Miejscowosc { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-
-        public StudentStatus Status { get; set; }
+        
         public ICollection<Student_Oceny> Student_Oceny { get; set; }
-    }
-
-    public enum StudentStatus
-    {
-        Submitted,
-        Approved,
-        Rejected
     }
 }

@@ -10,16 +10,16 @@ namespace EFDataApp.Views.Students
 {
     public class DI_BasePageModel
     {
-        protected AuthenticationContext Context { get; }
+        //protected AuthenticationContext Context { get; }
         protected IAuthorizationService AuthorizationService { get; }
         protected UserManager<IdentityUser> UserManager { get; }
 
         public DI_BasePageModel(
-            AuthenticationContext context,
+            //AuthenticationContext context,
             IAuthorizationService authorizationService,
             UserManager<IdentityUser> userManager) : base()
         {
-            Context = context;
+            //Context = context;
             UserManager = userManager;
             AuthorizationService = authorizationService;
         }

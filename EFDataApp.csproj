@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>79a3edd0-2092-40a2-a04d-dcb46d5ca9ed</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -26,8 +25,6 @@
     <Compile Remove="Migrations\20190808133212_MigrateDB.Designer.cs" />
     <Compile Remove="Migrations\20190809135420_MigrateDB.cs" />
     <Compile Remove="Migrations\20190809135420_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190812082455_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190812082455_MigrateDB.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,24 +32,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="EntityFramework" Version="6.2.0" />
-    <PackageReference Include="EntityFramework.SqlServerCompact" Version="6.2.0" />
-    <PackageReference Include="Fluent.Infrastructure" Version="2.0.0-beta-01" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.Net.Compilers" Version="3.2.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NET.Sdk.Razor" Version="2.2.0" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0-preview7-19378-04" />
-    <PackageReference Include="MSSQL" Version="1.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\Identity\Services\" />
     <Folder Include="Content\styles\" />
-    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>
