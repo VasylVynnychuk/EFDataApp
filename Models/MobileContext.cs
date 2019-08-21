@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using EFDataApp.ViewModels;
 
 namespace EFDataApp.Models
 {
@@ -12,6 +11,5 @@ namespace EFDataApp.Models
         {
             Database.EnsureCreated();
         }
-        public DbSet<EFDataApp.ViewModels.RegisterModel> RegisterModel { get; set; }
     }
 }

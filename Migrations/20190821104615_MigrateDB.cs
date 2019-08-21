@@ -17,7 +17,9 @@ namespace EFDataApp.Migrations
                     Nazwisko = table.Column<string>(nullable: true),
                     Ulica = table.Column<string>(nullable: true),
                     Kod_pocztowy = table.Column<string>(nullable: true),
-                    Miejscowosc = table.Column<string>(nullable: true)
+                    Miejscowosc = table.Column<string>(nullable: true),
+                    Email = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

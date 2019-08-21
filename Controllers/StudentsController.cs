@@ -21,7 +21,7 @@ namespace EFDataApp.Controllers
 
         // GET: Students
 
-        [Authorize]
+
         public async Task<IActionResult> Index(string sortOrder)
         {
             ViewData["NameSortParm"] = sortOrder == "name_asc" ? "name_desc" : "name_asc";
@@ -51,12 +51,12 @@ namespace EFDataApp.Controllers
                     break;
             }
 
-            if (User.Identity.IsAuthenticated)
-            {
-                return View(await students.AsNoTracking().Include(c => c.Student_Oceny).ToListAsync());
-            }
+            //if (User.Identity.IsAuthenticated)
+            //{
+            //    return View(await students.AsNoTracking().Include(c => c.Student_Oceny).ToListAsync());
+            //}
             //return Content(User.Identity.Name);
-            return View();
+            return View(await students.AsNoTracking().Include(c => c.Student_Oceny).ToListAsync());
         }
 
         // GET: Students/Details/5

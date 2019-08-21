@@ -20,7 +20,7 @@ namespace EFDataApp.Controllers
         }
 
         // GET: Student_Oceny
-        [Authorize]
+   
         public async Task<IActionResult> Index()
         {
             var mobileContext = _context.Student_Oceny.Include(s => s.Student);

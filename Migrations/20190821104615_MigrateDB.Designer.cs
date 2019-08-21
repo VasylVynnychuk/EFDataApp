@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDataApp.Migrations
 {
     [DbContext(typeof(MobileContext))]
-    [Migration("20190729121037_MigrateDB")]
+    [Migration("20190821104615_MigrateDB")]
     partial class MigrateDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,6 +26,8 @@ namespace EFDataApp.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Imie");
 
                     b.Property<string>("Kod_pocztowy");
@@ -33,6 +35,8 @@ namespace EFDataApp.Migrations
                     b.Property<string>("Miejscowosc");
 
                     b.Property<string>("Nazwisko");
+
+                    b.Property<string>("Password");
 
                     b.Property<string>("Ulica");
 

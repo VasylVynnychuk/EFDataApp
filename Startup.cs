@@ -74,7 +74,7 @@ namespace EFDataApp
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Account}/{action=Login}/{id?}");
+                    template: "{controller=Students}/{action=Index}/{id?}");
             });
         }
     }

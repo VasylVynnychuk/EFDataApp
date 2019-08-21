@@ -5,29 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20190725072703_EFDataApp.cs" />
-    <Compile Remove="Migrations\20190725072703_EFDataApp.Designer.cs" />
-    <Compile Remove="Migrations\20190729075624_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190729075624_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190729081047_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190729081047_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190729092830_MigrateDB1.cs" />
-    <Compile Remove="Migrations\20190729092830_MigrateDB1.Designer.cs" />
-    <Compile Remove="Migrations\20190729093242_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190729093242_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190729093621_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190729093621_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190729105628_MigrateDB1.cs" />
-    <Compile Remove="Migrations\20190729105628_MigrateDB1.Designer.cs" />
-    <Compile Remove="Migrations\20190729121037_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190729121037_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190808133212_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190808133212_MigrateDB.Designer.cs" />
-    <Compile Remove="Migrations\20190809135420_MigrateDB.cs" />
-    <Compile Remove="Migrations\20190809135420_MigrateDB.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\css\main.css" />
   </ItemGroup>
 

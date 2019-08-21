@@ -62,31 +62,6 @@ namespace EFDataApp.Migrations
                     b.ToTable("Student_Oceny");
                 });
 
-            modelBuilder.Entity("EFDataApp.ViewModels.RegisterModel", b =>
-                {
-                    b.Property<string>("Email")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("ConfirmPassword");
-
-                    b.Property<string>("Imie");
-
-                    b.Property<string>("Kod_pocztowy");
-
-                    b.Property<string>("Miejscowosc");
-
-                    b.Property<string>("Nazwisko");
-
-                    b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.Property<string>("Ulica");
-
-                    b.HasKey("Email");
-
-                    b.ToTable("RegisterModel");
-                });
-
             modelBuilder.Entity("EFDataApp.Models.Student_Oceny", b =>
                 {
                     b.HasOne("EFDataApp.Models.Student", "Student")
